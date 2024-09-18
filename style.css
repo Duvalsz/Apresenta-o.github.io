@@ -46,6 +46,11 @@ body {
     display: block;
     margin: 0 auto;
     cursor: pointer;
+    transition: transform 0.3s ease; /* Adiciona uma transição suave ao efeito de zoom */
+}
+
+.profile-img:hover {
+    transform: scale(1.2); /* Amplia a imagem em 20% quando o mouse passa sobre ela */
 }
 
 h1 {
@@ -73,9 +78,16 @@ h2 {
     border-top: 1px solid #ddd;
     padding-top: 15px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #003366; /* Azul-marinho */
+    color: #fff; /* Texto branco */
+    text-align: center;
+}
+
+.footer-watermark {
+    font-size: 0.75rem;
+    color: #fff;
+    opacity: 0.5; /* Leve transparência para a marca d'água */
+    margin-top: 20px; /* Adiciona espaço acima da marca d'água */
 }
 
 .contact-info {
@@ -186,33 +198,35 @@ h2 {
         font-size: 0.75rem;
     }
 }
-/* Rodapé */
-.card-footer {
-    border-top: 1px solid #ddd;
-    padding-top: 15px;
-    width: 100%;
-    background-color: #fff; /* Azul-marinho */
-    color: #fff; /* Texto branco */
-    text-align: center;
-}
 
-.footer-watermark {
-    font-size: 0.75rem;
-    color: black;
-    opacity: 0.5; /* Leve transparência para a marca d'água */
-    margin-top: 20px; /* Adiciona espaço acima da marca d'água */
-}
-.profile-img {
-    border: 3px solid #3498db;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-    transition: transform 0.3s ease; /* Adiciona uma transição suave ao efeito de zoom */
-}
+@media (max-width: 400px) {
+    .card {
+        padding: 10px;
+    }
 
-.profile-img:hover {
-    transform: scale(1.2); /* Amplia a imagem em 20% quando o mouse passa sobre ela */
+    .profile-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 0.875rem;
+    }
+
+    .card-body {
+        font-size: 0.75rem;
+    }
+
+    .contact-info img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .contact-info li {
+        font-size: 0.625rem;
+    }
 }
