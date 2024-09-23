@@ -11,17 +11,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 10px;
 }
 
+/* Estilos para o Cartão */
 .card {
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
     max-width: 600px;
-    text-align: center;
     padding: 20px;
     opacity: 0;
     transform: translateY(-20px);
@@ -30,7 +31,7 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    margin: 20px;
 }
 
 .card-header {
@@ -40,193 +41,152 @@ body {
 .profile-img {
     border: 3px solid #3498db;
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     display: block;
     margin: 0 auto;
-    cursor: pointer;
-    transition: transform 0.3s ease; /* Adiciona uma transição suave ao efeito de zoom */
+    transition: transform 0.3s ease;
 }
 
 .profile-img:hover {
-    transform: scale(1.2); /* Amplia a imagem em 20% quando o mouse passa sobre ela */
+    transform: scale(1.15);
+}
+
+h1, h2 {
+    margin: 10px 0;
+    color: #333;
+    text-align: center;
 }
 
 h1 {
-    font-size: 1.5rem;
-    color: #333;
+    font-size: 1.8rem;
 }
 
 h2 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    font-weight: 300;
     color: #555;
-    margin-bottom: 15px;
-}
-
-.card-body {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 20px;
 }
 
 .card-body p {
-    margin-bottom: 15px;
-}
-
-.card-footer {
-    border-top: 1px solid #ddd;
-    padding-top: 15px;
-    width: 100%;
-    background-color: #003366; /* Azul-marinho */
-    color: #fff; /* Texto branco */
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
     text-align: center;
 }
 
-.footer-watermark {
-    font-size: 0.75rem;
-    color: #fff;
-    opacity: 0.5; /* Leve transparência para a marca d'água */
-    margin-top: 20px; /* Adiciona espaço acima da marca d'água */
+/* Tabela de preços */
+.price-table {
+    margin-top: 20px;
+    text-align: center;
 }
 
-.contact-info {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.price-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.price-table th, .price-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.price-table th {
+    background-color: #3498db;
+    color: white;
+}
+
+.price-table td {
+    background-color: #f9f9f9;
+}
+
+/* Ícones de Contatos */
+.contact-icons {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 20px; /* Espaço entre os ícones */
+    margin-top: 20px;
 }
 
-.contact-info li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    font-size: 0.875rem;
+.contact-icons a {
+    text-decoration: none;
 }
 
-.contact-info img {
+.contact-icon {
     width: 40px;
     height: 40px;
-    margin-bottom: 5px;
-    border: 2px solid #000;
-    border-radius: 50%;
-    padding: 5px;
+    transition: transform 0.3s ease;
 }
 
-.contact-info a {
-    color: #3498db;
-    text-decoration: none;
-    text-align: center;
+.contact-icon:hover {
+    transform: scale(1.2); /* Efeito de zoom ao passar o cursor */
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
-/* Modal de imagem */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.8);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+/* Rodapé */
+.footer-watermark {
+    font-size: 0.75rem;
+    color: #333;
+    opacity: 0.7;
+    margin-top: 20px;
 }
 
 /* Responsividade */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .card {
-        width: 95%;
         padding: 15px;
+        margin: 15px;
     }
 
     .profile-img {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
     }
 
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .card-body {
+        font-size: 0.875rem;
+    }
+
+    .contact-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .price-table table th, .price-table table td {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
     h1 {
         font-size: 1.25rem;
     }
 
     h2 {
-        font-size: 1rem;
-    }
-
-    .card-body {
         font-size: 0.875rem;
     }
 
-    .contact-info img {
-        width: 30px;
-        height: 30px;
+    .card-body p {
+        font-size: 0.8rem;
     }
 
-    .contact-info li {
-        font-size: 0.75rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .card {
-        padding: 10px;
-    }
-
-    .profile-img {
-        width: 80px;
-        height: 80px;
-    }
-
-    h1 {
-        font-size: 1rem;
-    }
-
-    h2 {
-        font-size: 0.875rem;
-    }
-
-    .card-body {
-        font-size: 0.75rem;
-    }
-
-    .contact-info img {
+    .contact-icon {
         width: 25px;
         height: 25px;
     }
 
-    .contact-info li {
-        font-size: 0.625rem;
+    .price-table table th, .price-table table td {
+        font-size: 0.8rem;
     }
 }
