@@ -12,18 +12,17 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
     padding: 10px;
+    filter: brightness(0.9);
 }
 
-/* Estilos para o Cartão */
 .card {
     background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 600px;
-    padding: 20px;
+    padding: 25px;
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 1s ease, transform 1s ease;
@@ -32,6 +31,19 @@ body {
     align-items: center;
     position: relative;
     margin: 20px;
+    border: 2px solid transparent;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        border-color: #3498db;
+        box-shadow: 0 0 5px #3498db, 0 0 10px #3498db, 0 0 15px #3498db;
+    }
+    100% {
+        border-color: #3cb5f6;
+        box-shadow: 0 0 10px #3cb5f6, 0 0 20px #3cb5f6, 0 0 30px #3cb5f6;
+    }
 }
 
 .card-header {
@@ -41,8 +53,8 @@ body {
 .profile-img {
     border: 3px solid #3498db;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     display: block;
     margin: 0 auto;
@@ -60,24 +72,23 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 h2 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 300;
     color: #555;
 }
 
 .card-body p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #666;
     margin-bottom: 20px;
-    line-height: 1.5;
+    line-height: 1.6;
     text-align: center;
 }
 
-/* Tabela de preços */
 .price-table {
     margin-top: 20px;
     text-align: center;
@@ -90,7 +101,7 @@ h2 {
 
 .price-table th, .price-table td {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
     font-size: 1rem;
 }
@@ -104,11 +115,10 @@ h2 {
     background-color: #f9f9f9;
 }
 
-/* Ícones de Contatos */
 .contact-icons {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Espaço entre os ícones */
+    gap: 25px;
     margin-top: 20px;
 }
 
@@ -117,45 +127,70 @@ h2 {
 }
 
 .contact-icon {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
 }
 
 .contact-icon:hover {
-    transform: scale(1.2); /* Efeito de zoom ao passar o cursor */
+    transform: scale(1.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Rodapé */
 .footer-watermark {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     color: #333;
     opacity: 0.7;
     margin-top: 20px;
+    text-align: center;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .card {
-        padding: 15px;
+        padding: 20px;
         margin: 15px;
     }
 
     .profile-img {
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
     }
 
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .card-body p {
+        font-size: 0.9rem;
+    }
+
+    .contact-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .price-table table th, .price-table table td {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.3rem;
     }
 
     h2 {
         font-size: 1rem;
     }
 
-    .card-body {
-        font-size: 0.875rem;
+    .card-body p {
+        font-size: 0.85rem;
     }
 
     .contact-icon {
@@ -164,29 +199,6 @@ h2 {
     }
 
     .price-table table th, .price-table table td {
-        font-size: 0.875rem;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.25rem;
-    }
-
-    h2 {
-        font-size: 0.875rem;
-    }
-
-    .card-body p {
-        font-size: 0.8rem;
-    }
-
-    .contact-icon {
-        width: 25px;
-        height: 25px;
-    }
-
-    .price-table table th, .price-table table td {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 }
